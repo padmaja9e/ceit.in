@@ -33,6 +33,22 @@
 <meta property="og:url" content="https://www.ceit.in/">
 
 <style>
+
+  form {
+  max-width: 500px;
+  margin: auto;
+}
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 5px;
+  border: none;
+}
+textarea { min-height: 120px; }
+button { cursor: pointer; }
+
+  
 :root {
   --primary: #0a2540;
   --accent: #00d4ff;
@@ -255,10 +271,20 @@ footer {
 
 <section class="contact" id="contact">
   <h2>Contact Our IT Experts</h2>
-  <p>Looking for <strong>Managed IT Services in India</strong>? Contact us today.</p>
-  <p><strong>Phone:</strong> <a href="tel:+917901489477">+91 79014 89477</a></p>
-  <p><strong>Email:</strong> <a href="mailto:info@ceit.in">info@ceit.in</a></p>
+
+  <form action="https://formspree.io/f/xzdbanda" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" placeholder="Your Message" required></textarea>
+    <button type="submit" class="btn">Send Message</button>
+  </form>
+
+  <p style="margin-top:15px">
+    📞 <a href="tel:+917901489477">+91 79014 89477</a> |
+    ✉ <a href="mailto:info@ceit.in">info@ceit.in</a>
+  </p>
 </section>
+
 
 </main>
 
@@ -273,6 +299,7 @@ footer {
 
 </body>
 </html>
+
 
 
 
