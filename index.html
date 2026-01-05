@@ -17,9 +17,9 @@
   
   <style>
     :root {
-      --primary: #0F172A; /* Deep Navy */
-      --secondary: #2563EB; /* Modern Blue */
-      --accent: #F59E0B; /* Professional Amber */
+      --primary: #0F172A; 
+      --secondary: #2563EB; 
+      --accent: #F59E0B; 
       --text-main: #1E293B;
       --text-muted: #64748B;
       --bg-light: #F8FAFC;
@@ -53,11 +53,11 @@
     }
 
     .nav-links a {
-      margin-left: 30px;
+      margin-left: 25px;
       text-decoration: none;
       color: var(--primary);
       font-weight: 600;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       transition: var(--transition);
     }
 
@@ -66,7 +66,7 @@
     /* Hero Section */
     .hero {
       text-align: center;
-      padding: 120px 5% 80px;
+      padding: 100px 5% 80px;
       background: radial-gradient(circle at top right, #f1f5f9, #ffffff);
     }
 
@@ -74,20 +74,19 @@
       max-width: 480px;
       width: 85%;
       margin-bottom: 30px;
-      filter: drop-shadow(0 10px 15px rgba(0,0,0,0.05));
     }
 
     .hero h1 {
-      font-size: 3.2rem;
+      font-size: 3rem;
       color: var(--primary);
       letter-spacing: -0.02em;
       margin-bottom: 20px;
     }
 
     .hero p {
-      font-size: 1.3rem;
+      font-size: 1.25rem;
       color: var(--text-muted);
-      max-width: 700px;
+      max-width: 750px;
       margin: 0 auto 40px;
     }
 
@@ -95,40 +94,35 @@
     .btn {
       background: var(--primary);
       color: var(--white);
-      padding: 18px 40px;
+      padding: 16px 35px;
       text-decoration: none;
       border-radius: 8px;
       font-weight: 600;
       display: inline-block;
       transition: var(--transition);
       border: none;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    }
-
-    .btn-accent {
-      background: var(--accent);
-      color: var(--primary);
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
 
     .btn:hover {
       transform: translateY(-2px);
-      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 15px 25px rgba(37, 99, 235, 0.2);
       background: var(--secondary);
-      color: white;
     }
 
-    /* Services Grid */
-    .section-padding { padding: 100px 8%; max-width: 1200px; margin: auto; }
+    /* Services & Pricing Grids */
+    .section-padding { padding: 90px 8%; max-width: 1200px; margin: auto; }
     
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 30px;
-      margin-top: 60px;
+      margin-top: 50px;
     }
 
     .service-card {
-      padding: 50px 35px;
+      padding: 45px 35px;
       background: var(--white);
       border: 1px solid #E2E8F0;
       border-radius: 16px;
@@ -137,86 +131,58 @@
       overflow: hidden;
     }
 
-    .service-card::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; width: 100%; height: 4px;
-      background: var(--secondary);
-      opacity: 0;
-      transition: var(--transition);
-    }
-
     .service-card:hover {
-      transform: translateY(-12px);
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08);
-      border-color: transparent;
-    }
-
-    .service-card:hover::before { opacity: 1; }
-
-    .service-card h3 { 
-      color: var(--primary); 
-      font-size: 1.4rem;
-      margin: 20px 0 15px;
-    }
-
-    .service-card p {
-      color: var(--text-muted);
-      font-size: 1rem;
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+      border-color: var(--secondary);
     }
 
     /* Contact Form */
-    .contact-container { 
-      background: var(--primary); 
-      color: var(--white); 
-      padding: 100px 5%; 
-      border-radius: 40px 40px 0 0;
-    }
+    .contact-container { background: var(--primary); color: white; padding: 100px 5%; border-radius: 40px 40px 0 0; }
     
-    form {
-      max-width: 600px;
-      margin: auto;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
+    form { max-width: 600px; margin: auto; display: flex; flex-direction: column; gap: 20px; }
 
     input, textarea {
-      padding: 18px;
+      padding: 16px;
       border: 1px solid #334155;
       background: #1E293B;
       border-radius: 10px;
       font-size: 1rem;
       color: white;
-      transition: var(--transition);
     }
 
-    input:focus { border-color: var(--secondary); outline: none; background: #0F172A; }
+    /* Floating Navigation Cluster */
+    .back-to-top {
+      position: fixed;
+      bottom: 110px; right: 30px;
+      background: var(--white); color: var(--primary);
+      width: 40px; height: 40px; border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      text-decoration: none; border: 1px solid #E2E8F0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1); z-index: 1500; transition: var(--transition);
+    }
 
-    /* WhatsApp */
     .whatsapp-float {
       position: fixed;
-      bottom: 40px;
-      right: 40px;
-      background: #22C55E;
-      border-radius: 50px;
-      padding: 12px 24px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-      box-shadow: 0 10px 15px -3px rgba(34, 197, 94, 0.4);
-      z-index: 2000;
-      transition: var(--transition);
+      bottom: 30px; right: 30px;
+      background: #22C55E; border-radius: 50px;
+      padding: 12px 24px; display: flex; align-items: center;
+      gap: 10px; color: white; text-decoration: none;
+      font-weight: 600; box-shadow: 0 10px 15px rgba(34, 197, 94, 0.3);
+      z-index: 2000; transition: var(--transition);
     }
 
-    .whatsapp-float:hover { transform: scale(1.05); }
+    .mobile-call-float { display: none; }
 
     @media (max-width: 768px) {
       .hero h1 { font-size: 2.2rem; }
-      .nav-links { display: none; } /* Mobile optimization */
+      .nav-links { display: none; }
+      .mobile-call-float {
+        display: flex; position: fixed; bottom: 30px; left: 20px;
+        background: var(--primary); color: white; padding: 12px 20px;
+        border-radius: 50px; text-decoration: none; font-weight: 600;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.2); z-index: 2000;
+      }
     }
   </style>
 </head>
@@ -225,149 +191,119 @@
 
 <nav>
   <div class="logo">
-    <img src="/assets/logo-header-300x100.png" alt="CloudEdge IT" style="max-height:45px;">
+    <a href="#"><img src="/assets/logo-header-300x100.png" alt="CloudEdge IT" style="max-height:45px;"></a>
   </div>
   <div class="nav-links">
+    <a href="#">Home</a>
     <a href="#services">Solutions</a>
+    <a href="#pricing">Pricing</a>
     <a href="#contact">Contact</a>
-    <a href="https://whatbuddy.blogspot.com/" target="_blank">Insights</a>
+    <a href="https://whatbuddy.blogspot.com/" target="_blank" title="IT Industry Insights">Insights</a>
+    <a href="tel:+917901489477" style="color: var(--secondary); margin-left: 15px;">📞 Call Us</a>
   </div>
 </nav>
 
-<!-- <header class="hero">
-  <img src="/assets/logo-square-256.png" alt="CloudEdge IT Services" class="main-logo">
-  <h1>Empowering Indian Businesses through the Cloud.</h1>
-  <p>Enterprise-grade Managed IT, Security, and Cloud Infrastructure tailored for your growth.</p>
-  <div style="display: flex; gap: 15px; justify-content: center;">
-    <a href="#contact" class="btn">Get a Proposal</a>
-    <a href="#services" class="btn btn-accent" style="background: #E2E8F0; color: var(--primary);">View Services</a>
-  </div>
-</header> -->
-
-  <header class="hero">
+<header class="hero">
   <div style="margin-bottom: 20px;">
-    <span style="background: rgba(37, 99, 235, 0.1); color: var(--secondary); padding: 8px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">
-      Authorized Cloud Solutions Partner
-    </span>
+    <span style="background: rgba(37, 99, 235, 0.1); color: var(--secondary); padding: 8px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 700;">AUTHORIZED CLOUD PARTNER</span>
   </div>
-
-  <img src="/assets/logo-square-512.png" alt="CloudEdge IT Services" class="main-logo">
-  
-  <h1>Unified Cloud Solutions for modern Enterprise.</h1>
-  
-  <p>We specialize in deploying, securing, and managing <strong>Google Workspace, Microsoft 365, and Zoho</strong> environments to keep your business agile and secure.</p>
-  
-  <div style="display: flex; gap: 15px; justify-content: center; margin-bottom: 50px;">
-    <a href="#contact" class="btn">Start Your Migration</a>
-    <a href="#services" class="btn" style="background: transparent; color: var(--primary); border: 2px solid #E2E8F0; box-shadow: none;">Explore Services</a>
-  </div>
-
-  <div style="border-top: 1px solid #E2E8F0; padding-top: 30px; max-width: 800px; margin: 0 auto;">
-    <p style="font-size: 0.85rem; font-weight: 700; text-transform: uppercase; color: #94A3B8; letter-spacing: 1.5px; margin-bottom: 20px;">Our Technology Stack</p>
-    <div style="display: flex; justify-content: center; gap: 40px; opacity: 0.6; grayscale: 100%; flex-wrap: wrap;">
-      <span style="font-weight: 600; color: #4285F4;">Google Workspace</span>
-      <span style="font-weight: 600; color: #0078D4;">Microsoft Azure</span>
-      <span style="font-weight: 600; color: #E31D23;">Zoho Workplace</span>
-      <span style="font-weight: 600; color: #1E293B;">Cybersecurity</span>
-    </div>
+  <img src="/assets/logo-square-512.png" alt="CloudEdge IT" class="main-logo">
+  <h1>Unified Cloud Solutions for Modern Enterprise.</h1>
+  <p>Expert deployment, management, and security for Google Workspace, Microsoft 365, and Zoho ecosystems.</p>
+  <div style="display: flex; gap: 15px; justify-content: center;">
+    <a href="#contact" class="btn">Get Started Now</a>
+    <a href="#services" class="btn" style="background: transparent; color: var(--primary); border: 1px solid #E2E8F0; box-shadow: none;">Explore Services</a>
   </div>
 </header>
 
 <section class="section-padding" id="services">
-  <div style="text-align:center;">
-    <span style="color: var(--secondary); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem;">What we do</span>
-    <h2 style="font-size: 2.5rem; margin-top: 10px;">Managed IT Excellence</h2>
+  <div style="text-align:center; margin-bottom: 50px;">
+    <span style="color: var(--secondary); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem;">Managed Excellence</span>
+    <h2 style="font-size: 2.5rem; margin-top: 10px;">Our Core Services</h2>
   </div>
+  <div class="services-grid">
+    <div class="service-card"><h3>🌐 Google Workspace</h3><p>Seamless migration, security hardening, and 24/7 admin support.</p></div>
+    <div class="service-card"><h3>☁️ Microsoft 365 & Azure</h3><p>Cloud architecture, license optimization, and Azure infrastructure management.</p></div>
+    <div class="service-card"><h3>💼 Zoho Workplace</h3><p>Unified business apps and CRM integration for growing teams.</p></div>
+    <div class="service-card"><h3>🛡️ Cybersecurity</h3><p>MFA setup, EDR/XDR protection, and robust data backup protocols.</p></div>
+    <div class="service-card"><h3>💻 Infrastructure</h3><p>Network system integration and proactive hardware maintenance.</p></div>
+    <div class="service-card"><h3>🎧 Remote Support</h3><p>On-demand technical troubleshooting for your global workforce.</p></div>
+  </div>
+</section>
 
+<section class="section-padding" id="pricing" style="background: var(--bg-light);">
+  <h2 style="text-align:center; font-size: 2.5rem;">Service Packages</h2>
   <div class="services-grid">
     <div class="service-card">
-      <div style="font-size:32px;">🌐</div>
-      <h3>Google Workspace</h3>
-      <p>Secure setup, data migration, and advanced admin controls to maximize your team's collaboration.</p>
+      <h4 style="color: var(--text-muted);">Starter</h4>
+      <h3>Essential</h3>
+      <ul style="text-align:left; font-size: 0.9rem; color: var(--text-muted);"><li>Google/M365 Setup</li><li>Remote Support 9/5</li></ul>
+      <a href="#contact" class="btn" style="width:100%; background: #E2E8F0; color: var(--primary);">Inquire</a>
     </div>
-
-    <div class="service-card">
-      <div style="font-size:32px;">☁️</div>
-      <h3>Microsoft 365 & Azure</h3>
-      <p>Strategic Azure cloud architecture and seamless Microsoft 365 ecosystem management.</p>
+    <div class="service-card" style="border: 2px solid var(--secondary);">
+      <h4 style="color: var(--secondary);">Business</h4>
+      <h3>Professional</h3>
+      <ul style="text-align:left; font-size: 0.9rem; color: var(--text-muted);"><li>Advanced Security</li><li>Priority 24/7 Support</li></ul>
+      <a href="#contact" class="btn" style="width:100%;">Popular Choice</a>
     </div>
-
     <div class="service-card">
-      <div style="font-size:32px;">🛠️</div>
-      <h3>Infrastructure</h3>
-      <p>End-to-end system integration, network optimization, and reliable hardware procurement.</p>
-    </div>
-
-    <div class="service-card">
-      <div style="font-size:32px;">🛡️</div>
-      <h3>Cybersecurity</h3>
-      <p>Defend your assets with EDR/XDR, multi-factor authentication, and automated backup protocols.</p>
-    </div>
-
-    <div class="service-card">
-      <div style="font-size:32px;">📊</div>
-      <h3>Zoho Workplace</h3>
-      <p>Transform your workflows with cost-effective Zoho suite integration and CRM deployment.</p>
-    </div>
-
-    <div class="service-card">
-      <div style="font-size:32px;">🎧</div>
-      <h3>Remote Support</h3>
-      <p>24/7 proactive monitoring and instant technical assistance for your global operations.</p>
+      <h4 style="color: var(--text-muted);">Enterprise</h4>
+      <h3>Custom</h3>
+      <ul style="text-align:left; font-size: 0.9rem; color: var(--text-muted);"><li>Cloud Architecture</li><li>Dedicated Manager</li></ul>
+      <a href="#contact" class="btn" style="width:100%; background: var(--primary);">Contact Sales</a>
     </div>
   </div>
 </section>
 
 <div class="contact-container" id="contact">
-  <div style="text-align:center; margin-bottom: 50px;">
-    <h2>Ready to modernize?</h2>
-    <p style="color: #94A3B8;">Fill out the form below and an IT expert will contact you within 24 hours.</p>
+  <div id="success-msg" style="display:none; text-align:center; padding: 40px;">
+    <div style="font-size: 50px;">✅</div>
+    <h3>Inquiry Received!</h3>
+    <p>Our experts will contact you within 24 hours.</p>
+    <button onclick="location.reload()" class="btn">Send Another</button>
   </div>
-  
-  <form action="https://formspree.io/f/xzdbanda" method="POST">
-    <input type="hidden" name="_next" value="https://whatbuddy.blogspot.com/">
-    
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="email" name="email" placeholder="Work Email" required>
-    <textarea name="message" rows="5" placeholder="Tell us about your technical challenges..." required></textarea>
-    <button type="submit" class="btn" style="background: var(--secondary);">Send Inquiry</button>
+  <form id="contact-form" action="https://formspree.io/f/xzdbanda" method="POST">
+    <input type="text" name="name" placeholder="Full Name" required>
+    <input type="email" name="email" placeholder="Business Email" required>
+    <textarea name="message" rows="5" placeholder="How can we help your business?" required></textarea>
+    <button type="submit" id="submit-btn" class="btn" style="background: var(--secondary);">Send Inquiry</button>
   </form>
 </div>
 
-  <footer style="text-align:center; padding: 80px 5% 60px; background: var(--secondary); color: var(--white);">
-  <div style="max-width: 1200px; margin: 0 auto;">
-    <img src="/assets/favicon-32.png" alt="CloudEdge IT" style="max-height: 40px; filter: brightness(0) invert(1); margin-bottom: 30px; opacity: 0.9;">
-    
-    <div style="display: flex; justify-content: center; gap: 30px; margin-bottom: 30px; flex-wrap: wrap;">
-      <a href="#services" style="color: var(--white); text-decoration: none; font-weight: 500; opacity: 0.8;">Solutions</a>
-      <a href="#contact" style="color: var(--white); text-decoration: none; font-weight: 500; opacity: 0.8;">Consultation</a>
-      <a href="https://whatbuddy.blogspot.com/" style="color: var(--white); text-decoration: none; font-weight: 500; opacity: 0.8;">Technical Blog</a>
+<section class="section-padding" style="background: var(--bg-light);">
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px;">
+    <div>
+      <h2>Visit Our Office</h2>
+      <p>📍 Gachibowli, Hyderabad, Telangana 500032</p>
+      <p>⏰ Mon - Fri: 9:00 AM - 6:30 PM</p>
     </div>
-
-    <div style="height: 1px; background: rgba(255,255,255,0.2); max-width: 600px; margin: 0 auto 30px;"></div>
-
-    <p style="font-size: 0.95rem; opacity: 0.9; margin-bottom: 10px;">
-      © 2026 CloudEdge IT Services India. Your Trusted Partner in Digital Transformation.
-    </p>
-    
-    <div style="font-size: 0.85rem; opacity: 0.7;">
-      <a href="#" style="color: var(--white); margin: 0 10px; text-decoration: none;">Privacy Policy</a> | 
-      <a href="#" style="color: var(--white); margin: 0 10px; text-decoration: none;">Compliance</a> | 
-      <a href="#" style="color: var(--white); margin: 0 10px; text-decoration: none;">SLA</a>
+    <div style="border-radius: 20px; overflow: hidden; height: 300px;">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15228.455447475133!2d78.3497863!3d17.4400802!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb93a276e925ad%3A0x1fb3865f6966847d!2sGachibowli%2C%20Hyderabad%2C%20Telangana!5e0!3m2!1sen!2sin!4v1700000000000" width="100%" height="100%" style="border:0;" loading="lazy"></iframe>
     </div>
   </div>
+</section>
+
+<footer style="text-align:center; padding: 80px 5%; background: var(--secondary); color: white;">
+  <img src="/assets/logo-header-300x100.png" style="max-height: 40px; filter: brightness(0) invert(1); margin-bottom: 20px;">
+  <p>© 2026 CloudEdge IT Services India. Trusted Digital Transformation Partner.</p>
 </footer>
 
+<a href="tel:+917901489477" class="mobile-call-float">📞 Call Now</a>
+<a href="#" class="back-to-top">↑</a>
 <a href="https://wa.me/917901489477" class="whatsapp-float" target="_blank">
   <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width:25px;">
   <span>Chat with an Expert</span>
 </a>
 
+<script>
+  const form = document.getElementById('contact-form');
+  const successMsg = document.getElementById('success-msg');
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const response = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' }});
+    if (response.ok) { form.style.display = 'none'; successMsg.style.display = 'block'; }
+  });
+</script>
+
 </body>
 </html>
-
-
-
-
-
-
